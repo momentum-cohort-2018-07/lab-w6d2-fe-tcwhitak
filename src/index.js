@@ -3,16 +3,6 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 class App extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      history: [{
-        squares: Array(16).fill(null)
-      }],
-      stepNumber: 0,
-      xIsNext: true
-    }
-  }
   render () {
     return (
       <div className='App'>
@@ -26,7 +16,7 @@ class App extends Component {
 class CalButton extends React.Component {
   render () {
     return (
-      <button className='calButton' onClick={() => window.alert('click')}>
+      <button className='calButton' onClick={() => window.alert(this.props.value)}>
         {this.props.value}
       </button>
     )
@@ -34,14 +24,6 @@ class CalButton extends React.Component {
 }
 
 class Calculator extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      buttons: Array(16).fill(null),
-      xIsNext: true
-    }
-  }
-
   renderButton (i) {
     return <CalButton
       value={[i]}

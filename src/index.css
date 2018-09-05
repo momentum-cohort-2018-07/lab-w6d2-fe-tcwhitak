@@ -1,5 +1,30 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: sans-serif;
+  background-color: #F9F8F8;
+  color: #272838
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.calculator {
+  border: 2px solid #272838
+}
+.display {
+  background-color: #F3DE8A;
+  height: 50px;
+  width: 100%;
+}
+.calButton {
+  width: 50px;
+  height: 50px;
+  background-color: #7E7F9A;
 }
