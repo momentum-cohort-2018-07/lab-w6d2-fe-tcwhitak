@@ -55,33 +55,33 @@ class Calculator extends Component {
       display here
         </div>
         <div className='calc-row'>
-          {this.renderButton(0)}
-          {this.renderButton(1)}
-          {this.renderButton(2)}
-          {this.renderButton(3)}
+          {this.renderButton('AC')}
+          {this.renderButton('+/-')}
+          {this.renderButton('%')}
+          {this.renderButton('/')}
+        </div>
+        <div className='calc-row'>
+          {this.renderButton(7)}
+          {this.renderButton(8)}
+          {this.renderButton(9)}
+          {this.renderButton('*')}
         </div>
         <div className='calc-row'>
           {this.renderButton(4)}
           {this.renderButton(5)}
           {this.renderButton(6)}
-          {this.renderButton(7)}
+          {this.renderButton('-')}
         </div>
         <div className='calc-row'>
-          {this.renderButton(8)}
-          {this.renderButton(9)}
-          {this.renderButton(10)}
-          {this.renderButton(11)}
+          {this.renderButton(1)}
+          {this.renderButton(2)}
+          {this.renderButton(3)}
+          {this.renderButton('+')}
         </div>
         <div className='calc-row'>
-          {this.renderButton(12)}
-          {this.renderButton(13)}
-          {this.renderButton(14)}
-          {this.renderButton(15)}
-        </div>
-        <div className='calc-row'>
-          {this.renderButton(16)}
-          {this.renderButton(17)}
-          {this.renderButton(18)}
+          {this.renderButton(0)}
+          {this.renderButton('.')}
+          {this.renderButton('=')}
         </div>
       </div>
     )
