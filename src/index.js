@@ -3,12 +3,41 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 class App extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      input: ''
+    }
+  }
   render () {
     return (
       <div className='App'>
-        <Calculator />
+        <Calculator
+          onClick={(i) => this.handleClick(i)}
+        />
       </div>
 
+    )
+  }
+
+  handleClick (i) {
+    console.log(i.toString(), typeof i)
+    const input = this.state.input
+
+    this.setState({
+      input: input.concat([i.toString()]
+      )
+    })
+  }
+}
+
+class Display extends React.Component {
+  render () {
+    return (
+      <div className='display'>
+        {this.props.input}
+      </div>
     )
   }
 }
@@ -16,7 +45,7 @@ class App extends Component {
 class CalButton extends React.Component {
   render () {
     return (
-      <button className='calButton' onClick={() => window.alert(this.props.value)}>
+      <button className='calButton' onClick={() => this.props.onClick()}>
         {this.props.value}
       </button>
     )
@@ -27,15 +56,20 @@ class Calculator extends Component {
   renderButton (i) {
     return <CalButton
       value={[i]}
+      onClick={() => this.props.onClick(i)}
+    />
+  }
+
+  renderDisplay () {
+    return <Display
+      input={this.props.input}
     />
   }
 
   render () {
     return (
       <div className='calculator'>
-        <div className='display'>
-      display here
-        </div>
+        {this.renderDisplay()}
         <div className='calc-row'>
           {this.renderButton('AC')}
           {this.renderButton('+/-')}
