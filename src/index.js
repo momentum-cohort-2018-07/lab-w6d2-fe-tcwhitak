@@ -15,6 +15,7 @@ class App extends Component {
       <div className='App'>
         <Calculator
           onClick={(i) => this.handleClick(i)}
+          input={this.state.input}
         />
       </div>
 
@@ -22,9 +23,7 @@ class App extends Component {
   }
 
   handleClick (i) {
-    console.log(i.toString(), typeof i)
     const input = this.state.input
-
     this.setState({
       input: input.concat([i.toString()]
       )
