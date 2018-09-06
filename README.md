@@ -14,4 +14,12 @@ Before you build out any code, take time to plan your calculator. You should thi
 
 ## TODO: calculator plan
 
-**Write your components with their props and state here.**
+Components: 
+-App
+  State: input, history
+-Calculator
+  props: onClick, input, history
+-Display
+  props: input
+-CalButton
+  props: value, onClick
